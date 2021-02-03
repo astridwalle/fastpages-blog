@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Intro | fastpages</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Intro" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://astridwalle.github.io/fastpages-blog/2021/02/03/Jupyter-Hacks.html" />
+<meta property="og:url" content="https://astridwalle.github.io/fastpages-blog/2021/02/03/Jupyter-Hacks.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-03T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"BlogPosting","headline":"Intro","url":"https://astridwalle.github.io/fastpages-blog/2021/02/03/Jupyter-Hacks.html","datePublished":"2021-02-03T00:00:00-06:00","dateModified":"2021-02-03T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://astridwalle.github.io/fastpages-blog/2021/02/03/Jupyter-Hacks.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpages-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://astridwalle.github.io/fastpages-blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages-blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Intro | fastpages</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Intro" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://astridwalle.github.io/fastpages-blog/2021/02/03/Jupyter-Hacks.html" />
+<meta property="og:url" content="https://astridwalle.github.io/fastpages-blog/2021/02/03/Jupyter-Hacks.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-03T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@type":"BlogPosting","headline":"Intro","url":"https://astridwalle.github.io/fastpages-blog/2021/02/03/Jupyter-Hacks.html","datePublished":"2021-02-03T00:00:00-06:00","dateModified":"2021-02-03T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://astridwalle.github.io/fastpages-blog/2021/02/03/Jupyter-Hacks.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://astridwalle.github.io/fastpages-blog/feed.xml" title="fastpages" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpages-blog/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpages-blog/about/">About Me</a><a class="page-link" href="/fastpages-blog/search/">Search</a><a class="page-link" href="/fastpages-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Intro</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-02-03T00:00:00-06:00" itemprop="datePublished">
+        Feb 3, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/astridwalle/fastpages-blog/tree/master/_notebooks/2021-02-03-Jupyter-Hacks.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastpages-blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/astridwalle/fastpages-blog/master?filepath=_notebooks%2F2021-02-03-Jupyter-Hacks.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpages-blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/astridwalle/fastpages-blog/blob/master/_notebooks/2021-02-03-Jupyter-Hacks.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpages-blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-02-03-Jupyter-Hacks.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Command-Mode">Command Mode<a class="anchor-link" href="#Command-Mode"> </a></h1><p>I don't know if it just me or if there are some other people as well, who came across the command mode quite late. So this would have saved me really a lot of time!</p>
+<p>To enter the command mode, just press <code>esc</code>.</p>
+<ul>
+<li>Now you can move across the cells with the arrow keys.</li>
+<li>Enable editing of a specific cell, just by hitting <code>enter</code>.</li>
+<li>Insert new cells before or after the current cell with <code>a</code>, <code>b</code>.</li>
+<li>Change between <code>code</code>and <code>markdown</code>with <code>y</code>and <code>m</code>.</li>
+<li>Deleting a cell is as easy as pressing <code>x</code>.</li>
+<li>...</li>
+</ul>
+<p>Check out <a href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/">https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/</a> for more functionalities.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Toggling-code">Toggling code<a class="anchor-link" href="#Toggling-code"> </a></h1><p>Sometimes you like to use the notebook as a nice and clean documentation for sharing your results and maybe you don't want to disturb the viewer with long and maybe messy codecells. Then you can insert one of the following code snippets at the beginning of your notebook.</p>
+<p>The first one is for toggling all code in the notebook # <a href="https://stackoverflow.com/questions/27934885/how-to-hide-code-from-cells-in-ipython-notebook-visualized-with-nbviewer">https://stackoverflow.com/questions/27934885/how-to-hide-code-from-cells-in-ipython-notebook-visualized-with-nbviewer</a></p>
+<p>The second one is for toggling one specific cell by adding the command <code>hide_toggle()</code> at the end <a href="https://stackoverflow.com/questions/31517194/how-to-hide-one-specific-cell-input-or-output-in-ipython-notebook/48084050">https://stackoverflow.com/questions/31517194/how-to-hide-one-specific-cell-input-or-output-in-ipython-notebook/48084050</a></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<script>
+code_show=true; 
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+} 
+$( document ).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code." /></form>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">hide_toggle</span><span class="p">(</span><span class="n">for_next</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">this_cell</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;$(&#39;div.cell.code_cell.rendered.selected&#39;)&quot;&quot;&quot;</span>
+    <span class="n">next_cell</span> <span class="o">=</span> <span class="n">this_cell</span> <span class="o">+</span> <span class="s1">&#39;.next()&#39;</span>
+
+    <span class="n">toggle_text</span> <span class="o">=</span> <span class="s1">&#39;Toggle show/hide&#39;</span>  <span class="c1"># text shown on toggle link</span>
+    <span class="n">target_cell</span> <span class="o">=</span> <span class="n">this_cell</span>  <span class="c1"># target cell to control with toggle</span>
+    <span class="n">js_hide_current</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>  <span class="c1"># bit of JS to permanently hide code in current cell (only when toggling next cell)</span>
+
+    <span class="k">if</span> <span class="n">for_next</span><span class="p">:</span>
+        <span class="n">target_cell</span> <span class="o">=</span> <span class="n">next_cell</span>
+        <span class="n">toggle_text</span> <span class="o">+=</span> <span class="s1">&#39; next cell&#39;</span>
+        <span class="n">js_hide_current</span> <span class="o">=</span> <span class="n">this_cell</span> <span class="o">+</span> <span class="s1">&#39;.find(&quot;div.input&quot;).hide();&#39;</span>
+
+    <span class="n">js_f_name</span> <span class="o">=</span> <span class="s1">&#39;code_toggle_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">**</span><span class="mi">64</span><span class="p">)))</span>
+
+    <span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;script&gt;</span>
+<span class="s2">            function </span><span class="si">{f_name}</span><span class="s2">() {{</span>
+<span class="s2">                </span><span class="si">{cell_selector}</span><span class="s2">.find(&#39;div.input&#39;).toggle();</span>
+<span class="s2">            }}</span>
+
+<span class="s2">            </span><span class="si">{js_hide_current}</span><span class="s2"></span>
+<span class="s2">        &lt;/script&gt;</span>
+
+<span class="s2">        &lt;a href=&quot;javascript:</span><span class="si">{f_name}</span><span class="s2">()&quot;&gt;</span><span class="si">{toggle_text}</span><span class="s2">&lt;/a&gt;</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">f_name</span><span class="o">=</span><span class="n">js_f_name</span><span class="p">,</span>
+        <span class="n">cell_selector</span><span class="o">=</span><span class="n">target_cell</span><span class="p">,</span>
+        <span class="n">js_hide_current</span><span class="o">=</span><span class="n">js_hide_current</span><span class="p">,</span> 
+        <span class="n">toggle_text</span><span class="o">=</span><span class="n">toggle_text</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+
+<span class="n">hide_toggle</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <script>
+            function code_toggle_14354640674511394847() {
+                $('div.cell.code_cell.rendered.selected').find('div.input').toggle();
+            }
+
+            
+        </script>
+
+        <a href="javascript:code_toggle_14354640674511394847()">Toggle show/hide</a>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Toggle-output">Toggle output<a class="anchor-link" href="#Toggle-output"> </a></h1><p>Sometimes you also want to toggle the output, especially if you have created some long printings in a loop and you don't want to scroll down so much.</p>
+<p>Therefore you have to enter the command mode again, press <code>esc</code> and use the shortcut <code>esc + o</code>. The same shortcut is used to untoggle the output.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Variable-output">Variable output<a class="anchor-link" href="#Variable-output"> </a></h1><p>One great thing about jupyter-notebook is the output of all variables, including arrays and dataframes. But by default only the last statement will produce a printed output. So, in the end you will end up with lots of cells or un/commenting lines for printing several variables. But there is an easy solution - check out the following code snippet. Found on <a href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/">https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/</a> - there is also the description how to enable this permanently for all your notebooks.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="kn">import</span> <span class="n">InteractiveShell</span>
+<span class="n">InteractiveShell</span><span class="o">.</span><span class="n">ast_node_interactivity</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span>
+
+<span class="n">hide_toggle</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <script>
+            function code_toggle_5024142048525262364() {
+                $('div.cell.code_cell.rendered.selected').find('div.input').toggle();
+            }
+
+            
+        </script>
+
+        <a href="javascript:code_toggle_5024142048525262364()">Toggle show/hide</a>
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+<span class="n">a</span>
+<span class="n">b</span>
+<span class="n">c</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>20</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>30</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Help---man-pages">Help - man pages<a class="anchor-link" href="#Help---man-pages"> </a></h1><p>By adding a <code>?</code> in front of a function, you will get the documentation for this function, so no need to google it while coding.</p>
+<p>--&gt; And if you want to close the documentation, just hit <code>esc</code>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">?</span>print
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Execute-shell-commands">Execute shell commands<a class="anchor-link" href="#Execute-shell-commands"> </a></h1><p>For executing shell commands, e.g. creating folders, getting filenames, you just have to preset a <code>!</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls -al
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>total 1016
+drwxr-xr-x  7 astrid  staff     224 Feb  3 08:51 <span class="ansi-blue-fg">.</span>
+drwxr-xr-x  7 astrid  staff     224 Jan 26 20:10 <span class="ansi-blue-fg">..</span>
+drwxr-xr-x  5 astrid  staff     160 Feb  3 08:22 <span class="ansi-blue-fg">.ipynb_checkpoints</span>
+-rw-r--r--@ 1 astrid  staff  485805 Feb  3 08:45 1_DataManagement.ipynb
+-rw-r--r--  1 astrid  staff   20686 Feb  3 08:51 Jupyter-Hacks.ipynb
+-rw-r--r--  1 astrid  staff     881 Feb  3 08:25 hello_world.ipynb
+-rw-r--r--@ 1 astrid  staff     241 Feb  3 08:43 hello_world.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Magic-commands">Magic commands<a class="anchor-link" href="#Magic-commands"> </a></h1><p>Ipython has so called magic commands built-in, from which I find some extremely helpful!</p>
+<p>Some more examples can also be found here:
+<a href="https://towardsdatascience.com/top-8-magic-commands-in-jupyter-notebook-c1582e813560">https://towardsdatascience.com/top-8-magic-commands-in-jupyter-notebook-c1582e813560</a></p>
+<p>To get an overview of all available commands, type <code>%lsmagic</code>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">lsmagic</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Available line magics:
+%alias  %alias_magic  %autoawait  %autocall  %automagic  %autosave  %bookmark  %cat  %cd  %clear  %colors  %conda  %config  %connect_info  %cp  %debug  %dhist  %dirs  %doctest_mode  %ed  %edit  %env  %gui  %hist  %history  %killbgscripts  %ldir  %less  %lf  %lk  %ll  %load  %load_ext  %loadpy  %logoff  %logon  %logstart  %logstate  %logstop  %ls  %lsmagic  %lx  %macro  %magic  %man  %matplotlib  %mkdir  %more  %mv  %notebook  %page  %pastebin  %pdb  %pdef  %pdoc  %pfile  %pinfo  %pinfo2  %pip  %popd  %pprint  %precision  %prun  %psearch  %psource  %pushd  %pwd  %pycat  %pylab  %qtconsole  %quickref  %recall  %rehashx  %reload_ext  %rep  %rerun  %reset  %reset_selective  %rm  %rmdir  %run  %save  %sc  %set_env  %store  %sx  %system  %tb  %time  %timeit  %unalias  %unload_ext  %who  %who_ls  %whos  %xdel  %xmode
+
+Available cell magics:
+%%!  %%HTML  %%SVG  %%bash  %%capture  %%debug  %%file  %%html  %%javascript  %%js  %%latex  %%markdown  %%perl  %%prun  %%pypy  %%python  %%python2  %%python3  %%ruby  %%script  %%sh  %%svg  %%sx  %%system  %%time  %%timeit  %%writefile
+
+Automagic is ON, % prefix IS NOT needed for line magics.</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the following list I describe my favourite commands</p>
+<ul>
+<li>%%time: Measure cell execution time</li>
+<li>%env: set and get system environment variables</li>
+<li>%who: show all variables of a specific type, e.g. str / int</li>
+<li>%load: load code into your notebook (does not work with .ipynb, but with .py)</li>
+<li>%run: execute external code (does work with .ipynb)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 1.31 ms, sys: 33 µs, total: 1.34 ms
+Wall time: 1.38 ms
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">env</span> NEW_ENV=MAGIC
+<span class="o">%</span><span class="k">env</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>env: NEW_ENV=MAGIC
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;TERM_PROGRAM&#39;: &#39;Apple_Terminal&#39;,
+ &#39;TERM&#39;: &#39;xterm-color&#39;,
+ &#39;SHELL&#39;: &#39;/bin/bash&#39;,
+ &#39;TMPDIR&#39;: &#39;/var/folders/b0/006828j97knc9z1y2jbxf57c0000gn/T/&#39;,
+ &#39;CONDA_SHLVL&#39;: &#39;1&#39;,
+ &#39;CONDA_PROMPT_MODIFIER&#39;: &#39;(base) &#39;,
+ &#39;TERM_PROGRAM_VERSION&#39;: &#39;440&#39;,
+ &#39;TERM_SESSION_ID&#39;: &#39;692799A3-08CC-4B2B-AA6E-F76D9DCA9312&#39;,
+ &#39;USER&#39;: &#39;astrid&#39;,
+ &#39;CONDA_EXE&#39;: &#39;/Users/astrid/opt/anaconda3/bin/conda&#39;,
+ &#39;SSH_AUTH_SOCK&#39;: &#39;/private/tmp/com.apple.launchd.tRpoCDVVO2/Listeners&#39;,
+ &#39;AWS_PROFILE&#39;: &#39;admin&#39;,
+ &#39;_CE_CONDA&#39;: &#39;&#39;,
+ &#39;PATH&#39;: &#39;/Users/astrid/opt/anaconda3/bin:/Users/astrid/opt/anaconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/astrid/local/bin&#39;,
+ &#39;LaunchInstanceID&#39;: &#39;0F4231B1-0052-4D2E-A19D-0A0A8F42DE3C&#39;,
+ &#39;CONDA_PREFIX&#39;: &#39;/Users/astrid/opt/anaconda3&#39;,
+ &#39;__CFBundleIdentifier&#39;: &#39;com.apple.Terminal&#39;,
+ &#39;PWD&#39;: &#39;/Users/astrid/work/CFDsolutions/Verfahrenstechnik_TUB/Mini_AI_Gym/1_DataManagement&#39;,
+ &#39;XPC_FLAGS&#39;: &#39;0x0&#39;,
+ &#39;_CE_M&#39;: &#39;&#39;,
+ &#39;XPC_SERVICE_NAME&#39;: &#39;0&#39;,
+ &#39;HOME&#39;: &#39;/Users/astrid&#39;,
+ &#39;SHLVL&#39;: &#39;1&#39;,
+ &#39;CONDA_PYTHON_EXE&#39;: &#39;/Users/astrid/opt/anaconda3/bin/python&#39;,
+ &#39;LOGNAME&#39;: &#39;astrid&#39;,
+ &#39;LC_CTYPE&#39;: &#39;UTF-8&#39;,
+ &#39;CONDA_DEFAULT_ENV&#39;: &#39;base&#39;,
+ &#39;SECURITYSESSIONID&#39;: &#39;186ab&#39;,
+ &#39;_&#39;: &#39;/Users/astrid/opt/anaconda3/bin/jupyter-notebook&#39;,
+ &#39;KERNEL_LAUNCH_TIMEOUT&#39;: &#39;40&#39;,
+ &#39;JPY_PARENT_PID&#39;: &#39;4177&#39;,
+ &#39;CLICOLOR&#39;: &#39;1&#39;,
+ &#39;PAGER&#39;: &#39;cat&#39;,
+ &#39;GIT_PAGER&#39;: &#39;cat&#39;,
+ &#39;MPLBACKEND&#39;: &#39;module://ipykernel.pylab.backend_inline&#39;,
+ &#39;NEW_ENV&#39;: &#39;MAGIC&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">who</span> int
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>b	 c	 i	 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load</span> ./hello_world.py 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>hello world
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> ./hello_world.ipynb
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>hello world
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Virtual-Environments-w/-Jupyter">Virtual Environments w/ Jupyter<a class="anchor-link" href="#Virtual-Environments-w/-Jupyter"> </a></h1><p>Python and PYthon packages are quite volatile and dynamic. So depending on versions packages might be or migt not be compatible. Virtual environemnts are very common to ensure a stable python env for your current project with the needed packages without breaking your systemwide python installation.</p>
+<p>Setting up the venv is well known</p>
+<div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">--</span><span class="n">system</span><span class="o">-</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="n">NAME_ENV</span>
+</pre></div>
+<p>But if you use jupyter-notebooks a lot for development, you want to use the same environemnts also in your notebooks:</p>
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="n">ipykernel</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">myenv</span>
+<span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/fastpages-blog/2021/02/03/Jupyter-Hacks.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpages-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastpages-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpages-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/fastpages-blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/fastpages-blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
